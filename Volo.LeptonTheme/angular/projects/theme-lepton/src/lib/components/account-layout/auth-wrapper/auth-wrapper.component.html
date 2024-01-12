@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col mx-auto" style="max-width: 400px">
+    <abp-account-logo
+      *abpReplaceableTemplate="{ componentKey: service.logoKey }"
+    ></abp-account-logo>
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title d-inline-block">{{ service.pageLabel | abpLocalization }}</h2>
+        <nav class="navbar navbar-expand p-0 pt-1 float-end">
+          <ul class="navbar-nav ms-auto toolbar-nav">
+            <li class="nav-item">
+              <div class="dropdown" ngbDropdown>
+                <a
+                  *ngIf="service.defaultLanguage$ | async as defaultLang"
+                  class="pointer"
+                  role="button"
+                  id="dropdownMenuLink"
+                  ngbDropdownToggle
+                  [class.dropdown-toggle]="false"
+                >
+                  <span
+                    class="flag-icon flag-icon-squared flag-icon-{{ defaultLang.flagIcon }}"
+                  ></span>
+                </a>
+                <div
+                  ngbDropdownMenu
+                  class="dropdown-menu dropdown-menu-end"
+                  *ngIf="(service.dropdownLanguages$ | async).length > 0"
+                >
+                  <a
+                    *ngFor="let lang of service.dropdownLanguages$ | async"
+                    class="dropdown-item pointer"
+                    (click)="service.onChangeLang(lang.cultureName)"
+                  >
+                    <span
+                      class="flag-icon flag-icon-{{ lang.flagIcon }} flag-icon-squared me-2"
+                    ></span>
+                    {{ lang?.displayName }}</a
+                  >
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <ng-container *ngIf="(service.isMultiTenancyEnabled$ | async) && service.isTenantBoxVisible">
+        <abp-tenant-box
+          *abpReplaceableTemplate="{ componentKey: service.tenantBoxKey }"
+        ></abp-tenant-box>
+      </ng-container>
+      <div
+        class="card-body"
+        *ngIf="service.enableLocalLogin$ | async; else disableLocalLoginTemplate"
+      >
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #disableLocalLoginTemplate>
+  <div class="alert alert-warning">
+    <strong>{{ 'AbpAccount::InvalidLoginRequest' | abpLocalization }}</strong>
+    {{ 'AbpAccount::ThereAreNoLoginSchemesConfiguredForThisClient' | abpLocalization }}
+  </div>
+</ng-template>

@@ -1,0 +1,21 @@
+<abp-header
+  *abpReplaceableTemplate="{
+    componentKey: headerComponentKey,
+    outputs: { mouseMoveContainer: listenMouseMove }
+  }"
+  (mouseMoveContainer)="listenMouseMove($event)"
+></abp-header>
+<div class="lp-content h-100">
+  <abp-page-alert-container></abp-page-alert-container>
+
+  <router-outlet></router-outlet>
+</div>
+<abp-footer
+  *abpReplaceableTemplate="{
+    componentKey: footerComponentKey,
+    inputs: {
+      appInfo: { value: appInfo }
+    }
+  }"
+  [appInfo]="appInfo"
+></abp-footer>

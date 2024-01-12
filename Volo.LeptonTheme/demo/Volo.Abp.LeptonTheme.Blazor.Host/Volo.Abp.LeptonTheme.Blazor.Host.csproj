@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  
+
+  <PropertyGroup><LangVersion>latest</LangVersion>
+    <TargetFramework>net6.0</TargetFramework>
+    <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+    <RootNamespace>Volo.Abp.LeptonTheme.Blazor.Host</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazorise.Bootstrap5" Version="0.9.5.4" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.9.5.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="$(MicrosoftPackageVersion)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="$(MicrosoftPackageVersion)" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Autofac.WebAssembly" Version="5.1.4" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.LeptonTheme" Version="5.1.4" />
+    <ProjectReference Include="..\..\src\Volo.Abp.LeptonTheme.Management.Blazor\Volo.Abp.LeptonTheme.Management.Blazor.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Identity.Pro.Blazor" Version="5.1.4" />
+    <PackageReference Include="Volo.Abp.Account.Pro.Public.Blazor" Version="5.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Volo.Abp.LeptonTheme.Host.Shared\Volo.Abp.LeptonTheme.Host.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

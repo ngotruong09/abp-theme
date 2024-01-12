@@ -1,0 +1,22 @@
+{
+  "culture": "sk",
+  "texts": {
+    "Menu:LeptonThemeSettings": "Téma Lepton",
+    "Permission:LeptonThemeSettings": "Nastavenia témy Lepton",
+    "Permission:LeptonThemeManagement": "Správa témy Lepton",
+    "DisplayName:BoxedLayout": "Rozloženie v rámčeku",
+    "DisplayName:MenuPlacement": "Umiestnenie menu",
+    "DisplayName:MenuStatus": "Stav menu",
+    "SuccessfullySaved": "Úspešne uložené",
+    "Left": "Vľavo",
+    "Top": "Hore",
+    "AlwaysOpened": "Vždy otvorené",
+    "OpenOnHover": "Otvoriť po prechode kurzorom",
+    "DisplayName:Style": "Štýl",
+    "DisplayName:PublicLayoutStyle": "Štýl verejných webových stránok",
+    "Authentication:YouAreLoggedOut": "Ste odhlásený.",
+    "Feature:LeptonThemeManagementGroup": "Správa témy Lepton",
+    "Feature:LeptonThemeManagementEnable": "Povoliť správu témy Lepton",
+    "Feature:LeptonThemeManagementEnableDescription": "Povoliť systém správy Lepton v aplikácii."
+  }
+}

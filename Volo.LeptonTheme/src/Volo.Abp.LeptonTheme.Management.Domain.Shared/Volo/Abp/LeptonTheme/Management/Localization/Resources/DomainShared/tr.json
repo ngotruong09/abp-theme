@@ -1,0 +1,22 @@
+{
+  "culture": "tr",
+  "texts": {
+    "Menu:LeptonThemeSettings": "Lepton Teması",
+    "Permission:LeptonThemeSettings": "Lepton Teması ayarları",
+    "Permission:LeptonThemeManagement": "Lepton Teması yönetimi",
+    "DisplayName:BoxedLayout": "Ortalanmış içerik",
+    "DisplayName:MenuPlacement": "Menü yerleşimi",
+    "DisplayName:MenuStatus": "Menü durumu",
+    "SuccessfullySaved": "Başarıyla kaydedildi",
+    "Left": "Sol",
+    "Top": "Üst",
+    "AlwaysOpened": "Hep açık",
+    "OpenOnHover": "Üstüne gelince açık",
+    "DisplayName:Style": "Stil",
+    "DisplayName:PublicLayoutStyle": "Herkese açık web sitesi stili",
+    "Authentication:YouAreLoggedOut": "Çıkış yaptınız.",
+    "Feature:LeptonThemeManagementGroup": "Lepton Teması yönetimi",
+    "Feature:LeptonThemeManagementEnable": "Lepton tema yönetimini etkinleştirin",
+    "Feature:LeptonThemeManagementEnableDescription": "Uygulamanızdaki lepton tema yönetimini etkinleştirir."
+  }
+}

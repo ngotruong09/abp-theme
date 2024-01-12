@@ -1,0 +1,22 @@
+{
+  "culture": "ar",
+  "texts": {
+    "Menu:LeptonThemeSettings": "موضوع ليبتون",
+    "Permission:LeptonThemeSettings": "إعدادات Lepton Theme",
+    "Permission:LeptonThemeManagement": "إدارة Lepton Theme",
+    "DisplayName:BoxedLayout": "تخطيط محاصر",
+    "DisplayName:MenuPlacement": "وضع القائمة",
+    "DisplayName:MenuStatus": "حالة القائمة",
+    "SuccessfullySaved": "تم الحفظ بنجاح",
+    "Left": "غادر",
+    "Top": "قمة",
+    "AlwaysOpened": "دائما مفتوح",
+    "OpenOnHover": "فتح عند المرور فوق",
+    "DisplayName:Style": "أسلوب",
+    "DisplayName:PublicLayoutStyle": "نمط الموقع العام",
+    "Authentication:YouAreLoggedOut": "لقد قمت بتسجيل الخروج.",
+    "Feature:LeptonThemeManagementGroup": "إدارة Lepton Theme",
+    "Feature:LeptonThemeManagementEnable": "تفعيل إدارة نسق ليبتون",
+    "Feature:LeptonThemeManagementEnableDescription": "تفعيل نظام إدارة ليبتون في التطبيق."
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,IAAI;CACzB;;AACD,AAAA,gBAAgB,CAAC;EACb,UAAU,EAAE,IAAI;CACnB",
+    "sources": [
+        "Faq.scss"
+    ],
+    "names": [],
+    "file": "Faq.css"
+}

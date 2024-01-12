@@ -1,0 +1,51 @@
+<header *ngIf="state$ | async as data">
+  <div #navbarBrand>
+    <abp-logo *abpReplaceableTemplate="{ componentKey: logoComponentKey }"></abp-logo>
+  </div>
+
+  <abp-navbar-mobile
+    *abpReplaceableTemplate="{
+      componentKey: navbarMobileComponentKey,
+      inputs: {
+        isNavbarExpanded: { value: data.isNavbarExpanded },
+        isMenuExpanded: { value: data.isMenuExpanded }
+      },
+      outputs: {
+        navbarIconClick: navbarIconClick,
+        menuIconClick: menuIconClick
+      }
+    }"
+    [isNavbarExpanded]="data.isNavbarExpanded"
+    [isMenuExpanded]="data.isMenuExpanded"
+    (navbarIconClick)="navbarIconClick($event)"
+    (menuIconClick)="menuIconClick($event)"
+  ></abp-navbar-mobile>
+
+  <abp-navbar
+    *abpReplaceableTemplate="{
+      componentKey: navbarComponentKey,
+      inputs: {
+        isNavbarExpanded: { value: data.isNavbarExpanded },
+        smallScreen: { value: data.smallScreen }
+      }
+    }"
+    [smallScreen]="data.smallScreen"
+    [isNavbarExpanded]="data.isNavbarExpanded"
+  >
+  </abp-navbar>
+  <abp-sidebar
+    *abpReplaceableTemplate="{
+      componentKey: sidebarComponentKey,
+      inputs: {
+        smallScreen: { value: data.smallScreen },
+        isMenuExpanded: { value: data.isMenuExpanded },
+        isMenuPlacementTop: { value: data.isMenuPlacementTop }
+      },
+      outputs: { mouseMoveContainer: mouseMoveContainer.next }
+    }"
+    [smallScreen]="data.smallScreen"
+    [isMenuExpanded]="data.isMenuExpanded"
+    [isMenuPlacementTop]="data.isMenuPlacementTop"
+    (mouseMoveContainer)="mouseMoveContainer.next($event)"
+  ></abp-sidebar>
+</header>

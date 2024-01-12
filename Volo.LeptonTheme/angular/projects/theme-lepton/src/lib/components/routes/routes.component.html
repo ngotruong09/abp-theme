@@ -1,0 +1,104 @@
+<div class="lp-sidebar-wrapper">
+  <nav role="navigation" class="lp-sidebar-navi">
+    <ul>
+      <li *ngFor="let component of contentBefore" class="position-relative">
+        <ng-container *ngComponentOutlet="component; injector: injector"></ng-container>
+      </li>
+
+      <ng-container
+        *ngFor="let route of routes$ | async; trackBy: trackByFn"
+        [ngTemplateOutlet]="isDropdown(route) ? dropdownLink : defaultLink"
+        [ngTemplateOutletContext]="{ $implicit: route, level: initialLevel }"
+      >
+      </ng-container>
+
+      <li *ngFor="let component of contentAfter" class="position-relative">
+        <ng-container *ngComponentOutlet="component; injector: injector"></ng-container>
+      </li>
+
+      <ng-template #defaultLink let-route let-level="level">
+        <li
+          routerLinkActive="active-page current"
+          [routerLinkActiveOptions]="{ exact: route.path === '/' }"
+          *abpPermission="route.requiredPolicy"
+          (click)="$event.stopPropagation(); onNavigate(route, level)"
+        >
+          <a [routerLink]="[route.path]" (click)="clickedToLink.emit()">
+            <ng-container
+              *ngTemplateOutlet="linkContent; context: { $implicit: route }"
+            ></ng-container>
+          </a>
+        </li>
+      </ng-template>
+
+      <ng-template #linkContent let-route>
+        <span *ngIf="route.iconClass" class="lp-icon">
+          <i [ngClass]="route.iconClass"></i>
+        </span>
+        <span class="lp-text">
+          {{ route.name | abpLocalization }}
+        </span>
+      </ng-template>
+
+      <ng-template #dropdownLink let-route let-level="level">
+        <ng-container *ngIf="route.children?.length">
+          <li
+            *abpPermission="route.requiredPolicy"
+            class="has-drop"
+            [class.current]="expandedRoutes.has(route.name + level)"
+          >
+            <a
+              attr.data-level="{{ level }}"
+              href="javascript:void(0)"
+              (click)="
+                $event.stopPropagation();
+                isMenuPlacementTop && !smallScreen ? null : toggleExpand(route, level)
+              "
+            >
+              <ng-container
+                *ngTemplateOutlet="linkContent; context: { $implicit: route }"
+              ></ng-container>
+
+              <span class="lp-arrow-icon" [attr.for]="route.name">
+                <i class="fa fa-chevron-down"></i>
+              </span>
+            </a>
+            <ul
+              class="dropdown-ul"
+              [ngClass]="{
+                'd-block overflow-hidden': isMenuPlacementTop && !smallScreen ? false : true
+              }"
+              [id]="route.name"
+            >
+              <div
+                #routeContainer
+                [@collapse]="
+                  !isMenuPlacementTop
+                    ? expandedRoutes.has(route.name + level)
+                      ? 'expanded'
+                      : 'collapsed'
+                    : ''
+                "
+              >
+                <ng-container
+                  *ngFor="let child of route.children; trackBy: trackByFn"
+                  [ngTemplateOutlet]="dropdownMenu"
+                  [ngTemplateOutletContext]="{ $implicit: child, level: level + 1 }"
+                ></ng-container>
+              </div>
+            </ul>
+          </li>
+        </ng-container>
+      </ng-template>
+
+      <ng-template #dropdownMenu let-route let-level="level">
+        <ng-container
+          *ngTemplateOutlet="
+            isDropdown(route) ? dropdownLink : defaultLink;
+            context: { $implicit: route, level: level }
+          "
+        ></ng-container>
+      </ng-template>
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,99 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "demo": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton": {
+      "path": "src/Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton/Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.abppkg.json",
+      "folder": "src"
+    },
+    "Volo.Abp.LeptonTheme.Demo": {
+      "path": "demo/Volo.Abp.LeptonTheme.Demo/Volo.Abp.LeptonTheme.Demo.abppkg.json",
+      "folder": "demo"
+    },
+    "Volo.Abp.LeptonTheme.Management.Application": {
+      "path": "src/Volo.Abp.LeptonTheme.Management.Application/Volo.Abp.LeptonTheme.Management.Application.abppkg.json",
+      "folder": "src"
+    },
+    "Volo.Abp.LeptonTheme.Management.Application.Contracts": {
+      "path": "src/Volo.Abp.LeptonTheme.Management.Application.Contracts/Volo.Abp.LeptonTheme.Management.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "Volo.Abp.LeptonTheme.Management.Domain": {
+      "path": "src/Volo.Abp.LeptonTheme.Management.Domain/Volo.Abp.LeptonTheme.Management.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "Volo.Abp.LeptonTheme.Management.Domain.Shared": {
+      "path": "src/Volo.Abp.LeptonTheme.Management.Domain.Shared/Volo.Abp.LeptonTheme.Management.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "Volo.Abp.LeptonTheme.Management.HttpApi": {
+      "path": "src/Volo.Abp.LeptonTheme.Management.HttpApi/Volo.Abp.LeptonTheme.Management.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "Volo.Abp.LeptonTheme.Management.HttpApi.Client": {
+      "path": "src/Volo.Abp.LeptonTheme.Management.HttpApi.Client/Volo.Abp.LeptonTheme.Management.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "Volo.Abp.LeptonTheme.Management.Web": {
+      "path": "src/Volo.Abp.LeptonTheme.Management.Web/Volo.Abp.LeptonTheme.Management.Web.abppkg.json",
+      "folder": "src"
+    },
+    "Volo.Abp.LeptonTheme.Management.TestBase": {
+      "path": "test/Volo.Abp.LeptonTheme.Management.TestBase/Volo.Abp.LeptonTheme.Management.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "Volo.Abp.LeptonTheme.Management.Domain.Tests": {
+      "path": "test/Volo.Abp.LeptonTheme.Management.Domain.Tests/Volo.Abp.LeptonTheme.Management.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Volo.Abp.LeptonTheme.Management.Application.Tests": {
+      "path": "test/Volo.Abp.LeptonTheme.Management.Application.Tests/Volo.Abp.LeptonTheme.Management.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Volo.Abp.LeptonTheme.Management.Blazor": {
+      "path": "src/Volo.Abp.LeptonTheme.Management.Blazor/Volo.Abp.LeptonTheme.Management.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "Volo.Abp.LeptonTheme.Host.Shared": {
+      "path": "demo/Volo.Abp.LeptonTheme.Host.Shared/Volo.Abp.LeptonTheme.Host.Shared.abppkg.json",
+      "folder": "demo"
+    },
+    "Volo.Abp.LeptonTheme.HttpApi.Host": {
+      "path": "demo/Volo.Abp.LeptonTheme.HttpApi.Host/Volo.Abp.LeptonTheme.HttpApi.Host.abppkg.json",
+      "folder": "demo"
+    },
+    "Volo.Abp.LeptonTheme.IdentityServer": {
+      "path": "demo/Volo.Abp.LeptonTheme.IdentityServer/Volo.Abp.LeptonTheme.IdentityServer.abppkg.json",
+      "folder": "demo"
+    },
+    "Volo.Abp.LeptonTheme.Blazor.Host": {
+      "path": "demo/Volo.Abp.LeptonTheme.Blazor.Host/Volo.Abp.LeptonTheme.Blazor.Host.abppkg.json",
+      "folder": "demo"
+    },
+    "Volo.Abp.AspNetCore.Components.WebAssembly.LeptonTheme": {
+      "path": "src/Volo.Abp.AspNetCore.Components.WebAssembly.LeptonTheme/Volo.Abp.AspNetCore.Components.WebAssembly.LeptonTheme.abppkg.json",
+      "folder": "src"
+    },
+    "Volo.Abp.AspNetCore.Components.Web.LeptonTheme": {
+      "path": "src/Volo.Abp.AspNetCore.Components.Web.LeptonTheme/Volo.Abp.AspNetCore.Components.Web.LeptonTheme.abppkg.json",
+      "folder": "src"
+    },
+    "Volo.Abp.AspNetCore.Components.Server.LeptonTheme": {
+      "path": "src/Volo.Abp.AspNetCore.Components.Server.LeptonTheme/Volo.Abp.AspNetCore.Components.Server.LeptonTheme.abppkg.json",
+      "folder": "src"
+    },
+    "Volo.Abp.LeptonTheme.Management.Blazor.Server": {
+      "path": "src/Volo.Abp.LeptonTheme.Management.Blazor.Server/Volo.Abp.LeptonTheme.Management.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "Volo.Abp.LeptonTheme.Management.Blazor.WebAssembly": {
+      "path": "src/Volo.Abp.LeptonTheme.Management.Blazor.WebAssembly/Volo.Abp.LeptonTheme.Management.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    }
+  }
+}

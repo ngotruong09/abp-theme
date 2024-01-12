@@ -1,0 +1,33 @@
+﻿@page
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.LeptonTheme.Demo.Localization.Resource
+@inject IStringLocalizer<DemoResource> L
+
+<abp-card class="container">
+    <abp-card-body class="m-auto">
+        <section id="introduction" class="mt-3">
+            <h3 class="mb-4">@L["DownloadingTheModule"]</h3>
+            <p>
+                @L["SourceCodeOfThisWebsiteDescription"] <br/>
+                @L["SourceCodeDownloadOptions"]
+            </p>
+        </section>
+        <section id="abp-cli-module-download" class="mt-3">
+            <h4>@L["ABP_CLI"]</h4>
+            <p>@L["DownloadModuleViaABPCLI"] :</p>
+            <pre>
+                <code class="d-block p-3" style="background-color: #f6f8fa;"><strong>abp</strong> get-source Volo.LeptonTheme</code>
+            </pre>
+            <img src="/img/download-lepton-theme-using-cli.png" class="img-fluid" alt="Download the Lepton Theme Module by using ABP CLI"/>
+        </section>
+        <section id="abp-suite-module-download" class="mt-3">
+            <h4>@L["ABP_SUITE"]</h4>
+            <p>@L["Or"].Value.ToLower() @L["DownloadModuleViaABPSUITE"]</p>
+            <img src="/img/download-lepton-theme-using-suite.png" class="img-fluid" alt="Download the Lepton Theme Module by using ABP SUITE"/>
+            <p class="mt-3">
+                @L["LeptonThemeSourceCodeDownloadBtn"] <br/>
+                @L["SourceCodeInDemoFolderDescription"]
+            </p>
+        </section>
+    </abp-card-body>
+</abp-card>    

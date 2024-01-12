@@ -1,0 +1,82 @@
+<ng-container *ngIf="currentUser$ | async as user">
+  <ng-template #loginBtn>
+    <a role="button" class="btn" (click)="navigateToLogin()">
+      <i class="fas fa-sign-in-alt me-1"></i>
+      {{ 'AbpAccount::Login' | abpLocalization }}</a
+    >
+  </ng-template>
+  <div *ngIf="user.isAuthenticated; else loginBtn" class="dropdown btn-group" ngbDropdown>
+    <a ngbDropdownToggle class="btn pointer d-flex">
+      <abp-current-user-image
+        *abpReplaceableTemplate="{
+          componentKey: currentUserImageComponentKey,
+          inputs: { currentUser: { value: user }, classes: { value: 'user-avatar' } }
+        }"
+        classes="user-avatar"
+      ></abp-current-user-image>
+      <span class="ms-1">
+        <small *ngIf="(selectedTenant$ | async)?.name as tenantName"
+          ><i>{{ tenantName }}</i
+          >\</small
+        >
+        <span>{{ user.userName }}</span>
+      </span>
+    </a>
+    <div ngbDropdownMenu class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
+      <div class="p-2 row">
+        <div class="pe-0 col col-auto">
+          <abp-current-user-image
+            *abpReplaceableTemplate="{
+              componentKey: currentUserImageComponentKey,
+              inputs: { currentUser: { value: user }, classes: { value: 'user-avatar-big' } }
+            }"
+            classes="user-avatar-big"
+          ></abp-current-user-image>
+        </div>
+        <div class="ps-2 col">
+          <span>{{ 'AbpAccount::Welcome' | abpLocalization }}</span
+          ><br />
+          <small *ngIf="(selectedTenant$ | async)?.name as tenantName"
+            ><i>{{ tenantName }}</i
+            >\</small
+          >
+          <strong>{{
+            ((user.name || '') + ' ' + (user.surName || '')).trim() || user.userName
+          }}</strong>
+        </div>
+      </div>
+      <div class="dropdown-divider"></div>
+
+      <ng-container *ngFor="let item of userMenu.items$ | async; trackBy: trackByFn">
+        <ng-container *ngIf="item.visible && item.visible()">
+          <li class="nav-item d-flex align-items-center" *abpPermission="item.requiredPolicy">
+            <ng-container
+              *ngIf="item.component; else htmlTemplate"
+              [ngComponentOutlet]="item.component"
+              [ngComponentOutletInjector]="item | toInjector"
+            ></ng-container>
+
+            <ng-template #htmlTemplate>
+              <div
+                *ngIf="item.html; else textTemplate"
+                [innerHTML]="item.html"
+                (click)="item.action ? item.action() : null"
+              ></div>
+            </ng-template>
+
+            <ng-template #textTemplate>
+              <a
+                *ngIf="item.textTemplate"
+                (click)="item.action ? item.action() : null"
+                class="dropdown-item pointer"
+              >
+                <i *ngIf="item.textTemplate.icon" class="me-1 {{ item.textTemplate.icon }}"></i>
+                {{ item.textTemplate.text | abpLocalization }}</a
+              >
+            </ng-template>
+          </li>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Hwl.NewTheme</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.MongoDB" Version="5.3.3" />
+    <ProjectReference Include="..\Hwl.NewTheme.Domain\Hwl.NewTheme.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

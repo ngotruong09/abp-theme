@@ -1,0 +1,374 @@
+﻿@page
+@model Volo.Abp.LeptonTheme.Demo.Pages.IndexModel
+@{
+    Layout = "~/Pages/_Layouts/SiteLayout.cshtml";
+}
+@section styles
+{
+    <abp-style src="/Pages/Faq.css" />
+}
+@section scripts
+{
+    <abp-script src="/Pages/Faq.js" />
+}
+
+<section class="py-5">
+    <div class="container py-4">
+        <h2 class="text-center mb-0">Frequently Asked Questions</h2>
+        <div class="row py-5 ">
+            <div class="col-md-10 mx-auto aos-init aos-animate " data-aos="fade-left">
+                <form class="rounded shadow mb-5">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text border-0 pe-1">
+                            <i class="fa fa-search"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 px-1" aria-label="Search..." placeholder="Search..." value="Search...">
+
+                        <span class="input-group-text border-0 py-0 ps-1 pe-3">
+                            <span class="h6 text-uppercase text-muted d-none d-md-block mb-0 me-5">
+                                123 results
+                            </span>
+                            <button type="submit" class="btn btn-sm btn-primary">
+                                Search
+                            </button>
+                        </span>
+
+                    </div>
+                </form>
+                <div class="  accordion" id="featuresAccordion">
+                    <div class=" ">
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item">
+                                <a class="d-flex align-items-center text-reset text-decoration-none" data-bs-toggle="collapse" href="#featuresOne" role="button" aria-expanded="true" aria-controls="featuresOne">
+                                    <div class="me-auto">
+                                        <h3 class="mb-0">
+                                            Simple as Bootstrap but looks better.
+                                        </h3>
+                                    </div>
+
+                                    <span class="collapse-chevron text-muted ms-4">
+                                        <i class="fa fa-lg fa-chevron-down"></i>
+                                    </span>
+                                </a>
+                                <div class="collapse show" id="featuresOne" data-bs-parent="#featuresAccordion" style="">
+                                    <div class="py-3 py-mb-6">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur elit. Sunt rerum minima a possimus,
+                                            Lorem ipsum dolor sit amet, consectetur elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="list-group-item">
+                                <a class="d-flex align-items-center text-reset text-decoration-none collapsed" data-bs-toggle="collapse" href="#featuresTwo" role="button" aria-expanded="false" aria-controls="featuresTwo">
+                                    <div class="me-auto">
+                                        <h3 class="mb-0">
+                                            Based on familiar tools.
+                                        </h3>
+                                    </div>
+
+                                    <span class="collapse-chevron text-muted ms-4">
+                                        <i class="fa fa-lg fa-chevron-down"></i>
+                                    </span>
+
+                                </a>
+                                <div class="collapse" id="featuresTwo" data-bs-parent="#featuresAccordion" style="">
+                                    <div class="py-3 py-md-6">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="list-group-item">
+                                <a class="d-flex align-items-center text-reset text-decoration-none collapsed" data-bs-toggle="collapse" href="#featuresThree" role="button" aria-expanded="false" aria-controls="featuresThree">
+                                    <div class="me-auto">
+                                        <h3 class="mb-0">
+                                            Responsive layouts and styles
+                                        </h3>
+                                    </div>
+
+                                    <span class="collapse-chevron text-muted ms-4">
+                                        <i class="fa fa-lg fa-chevron-down"></i>
+                                    </span>
+
+                                </a>
+                                <div class="collapse" id="featuresThree" data-bs-parent="#featuresAccordion" style="">
+                                    <div class="py-3 py-md-6">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <a class="d-flex align-items-center text-reset text-decoration-none collapsed" data-bs-toggle="collapse" href="#featuresTwo" role="button" aria-expanded="false" aria-controls="featuresTwo">
+                                    <div class="me-auto">
+                                        <h3 class="mb-0">
+                                            Based on familiar tools.
+                                        </h3>
+                                    </div>
+
+                                    <span class="collapse-chevron text-muted ms-4">
+                                        <i class="fa fa-lg fa-chevron-down"></i>
+                                    </span>
+
+                                </a>
+                                <div class="collapse" id="featuresTwo" data-bs-parent="#featuresAccordion" style="">
+                                    <div class="py-3 py-md-6">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="list-group-item">
+                                <a class="d-flex align-items-center text-reset text-decoration-none collapsed" data-bs-toggle="collapse" href="#featuresThree" role="button" aria-expanded="false" aria-controls="featuresThree">
+                                    <div class="me-auto">
+                                        <h3 class="mb-0">
+                                            Responsive layouts and styles
+                                        </h3>
+                                    </div>
+
+                                    <span class="collapse-chevron text-muted ms-4">
+                                        <i class="fa fa-lg fa-chevron-down"></i>
+                                    </span>
+
+                                </a>
+                                <div class="collapse" id="featuresThree" data-bs-parent="#featuresAccordion" style="">
+                                    <div class="py-3 py-md-6">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <a class="d-flex align-items-center text-reset text-decoration-none collapsed" data-bs-toggle="collapse" href="#featuresTwo" role="button" aria-expanded="false" aria-controls="featuresTwo">
+                                    <div class="me-auto">
+                                        <h3 class="mb-0">
+                                            Based on familiar tools.
+                                        </h3>
+                                    </div>
+
+                                    <span class="collapse-chevron text-muted ms-4">
+                                        <i class="fa fa-lg fa-chevron-down"></i>
+                                    </span>
+
+                                </a>
+                                <div class="collapse" id="featuresTwo" data-bs-parent="#featuresAccordion" style="">
+                                    <div class="py-3 py-md-6">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="list-group-item">
+                                <a class="d-flex align-items-center text-reset text-decoration-none collapsed" data-bs-toggle="collapse" href="#featuresThree" role="button" aria-expanded="false" aria-controls="featuresThree">
+                                    <div class="me-auto">
+                                        <h3 class="mb-0">
+                                            Responsive layouts and styles
+                                        </h3>
+                                    </div>
+
+                                    <span class="collapse-chevron text-muted ms-4">
+                                        <i class="fa fa-lg fa-chevron-down"></i>
+                                    </span>
+
+                                </a>
+                                <div class="collapse" id="featuresThree" data-bs-parent="#featuresAccordion" style="">
+                                    <div class="py-3 py-md-6">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <a class="d-flex align-items-center text-reset text-decoration-none collapsed" data-bs-toggle="collapse" href="#featuresTwo" role="button" aria-expanded="false" aria-controls="featuresTwo">
+                                    <div class="me-auto">
+                                        <h3 class="mb-0">
+                                            Based on familiar tools.
+                                        </h3>
+                                    </div>
+
+                                    <span class="collapse-chevron text-muted ms-4">
+                                        <i class="fa fa-lg fa-chevron-down"></i>
+                                    </span>
+
+                                </a>
+                                <div class="collapse" id="featuresTwo" data-bs-parent="#featuresAccordion" style="">
+                                    <div class="py-3 py-md-6">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="list-group-item">
+                                <a class="d-flex align-items-center text-reset text-decoration-none collapsed" data-bs-toggle="collapse" href="#featuresThree" role="button" aria-expanded="false" aria-controls="featuresThree">
+                                    <div class="me-auto">
+                                        <h3 class="mb-0">
+                                            Responsive layouts and styles
+                                        </h3>
+                                    </div>
+
+                                    <span class="collapse-chevron text-muted ms-4">
+                                        <i class="fa fa-lg fa-chevron-down"></i>
+                                    </span>
+
+                                </a>
+                                <div class="collapse" id="featuresThree" data-bs-parent="#featuresAccordion" style="">
+                                    <div class="py-3 py-md-6">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <a class="d-flex align-items-center text-reset text-decoration-none collapsed" data-bs-toggle="collapse" href="#featuresTwo" role="button" aria-expanded="false" aria-controls="featuresTwo">
+                                    <div class="me-auto">
+                                        <h3 class="mb-0">
+                                            Based on familiar tools.
+                                        </h3>
+                                    </div>
+
+                                    <span class="collapse-chevron text-muted ms-4">
+                                        <i class="fa fa-lg fa-chevron-down"></i>
+                                    </span>
+
+                                </a>
+                                <div class="collapse" id="featuresTwo" data-bs-parent="#featuresAccordion" style="">
+                                    <div class="py-3 py-md-6">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="list-group-item">
+                                <a class="d-flex align-items-center text-reset text-decoration-none collapsed" data-bs-toggle="collapse" href="#featuresThree" role="button" aria-expanded="false" aria-controls="featuresThree">
+                                    <div class="me-auto">
+                                        <h3 class="mb-0">
+                                            Responsive layouts and styles
+                                        </h3>
+                                    </div>
+
+                                    <span class="collapse-chevron text-muted ms-4">
+                                        <i class="fa fa-lg fa-chevron-down"></i>
+                                    </span>
+
+                                </a>
+                                <div class="collapse" id="featuresThree" data-bs-parent="#featuresAccordion" style="">
+                                    <div class="py-3 py-md-6">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <a class="d-flex align-items-center text-reset text-decoration-none collapsed" data-bs-toggle="collapse" href="#featuresTwo" role="button" aria-expanded="false" aria-controls="featuresTwo">
+                                    <div class="me-auto">
+                                        <h3 class="mb-0">
+                                            Based on familiar tools.
+                                        </h3>
+                                    </div>
+
+                                    <span class="collapse-chevron text-muted ms-4">
+                                        <i class="fa fa-lg fa-chevron-down"></i>
+                                    </span>
+
+                                </a>
+                                <div class="collapse" id="featuresTwo" data-bs-parent="#featuresAccordion" style="">
+                                    <div class="py-3 py-md-6">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="list-group-item">
+                                <a class="d-flex align-items-center text-reset text-decoration-none collapsed" data-bs-toggle="collapse" href="#featuresThree" role="button" aria-expanded="false" aria-controls="featuresThree">
+                                    <div class="me-auto">
+                                        <h3 class="mb-0">
+                                            Responsive layouts and styles
+                                        </h3>
+                                    </div>
+
+                                    <span class="collapse-chevron text-muted ms-4">
+                                        <i class="fa fa-lg fa-chevron-down"></i>
+                                    </span>
+
+                                </a>
+                                <div class="collapse" id="featuresThree" data-bs-parent="#featuresAccordion" style="">
+                                    <div class="py-3 py-md-6">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus,
+                                            amet perferendis, temporibus obcaecati pariatur.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

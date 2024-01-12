@@ -1,0 +1,22 @@
+{
+  "culture": "hi",
+  "texts": {
+    "Menu:LeptonThemeSettings": "लिप्टन थीम",
+    "Permission:LeptonThemeSettings": "लिप्टन थीम सेटिंग्स",
+    "Permission:LeptonThemeManagement": "लिप्टन थीम प्रबंधन",
+    "DisplayName:BoxedLayout": "बॉक्सिंग लेआउट",
+    "DisplayName:MenuPlacement": "मेनू प्लेसमेंट",
+    "DisplayName:MenuStatus": "मेनू की स्थिति",
+    "SuccessfullySaved": "सफलतापूर्वक संचित कर लिया गया है",
+    "Left": "बाएं",
+    "Top": "ऊपर",
+    "AlwaysOpened": "हमेशा खोला",
+    "OpenOnHover": "होवर पर खोलें",
+    "DisplayName:Style": "अंदाज",
+    "DisplayName:PublicLayoutStyle": "सार्वजनिक वेबसाइट शैली",
+    "Authentication:YouAreLoggedOut": "आप लॉग आउट हैं।",
+    "Feature:LeptonThemeManagementGroup": "लिप्टन थीम प्रबंधन",
+    "Feature:LeptonThemeManagementEnable": "लिप्टन थीम प्रबंधन सक्षम करें",
+    "Feature:LeptonThemeManagementEnableDescription": "एप्लिकेशन में लीप्टन प्रबंधन प्रणाली सक्षम करें।"
+  }
+}

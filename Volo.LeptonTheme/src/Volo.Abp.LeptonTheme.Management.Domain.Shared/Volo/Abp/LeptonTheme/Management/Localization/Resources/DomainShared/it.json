@@ -1,0 +1,22 @@
+{
+  "culture": "it",
+  "texts": {
+    "Menu:LeptonThemeSettings": "Tema Lepton",
+    "Permission:LeptonThemeSettings": "Impostazioni del tema Lepton",
+    "Permission:LeptonThemeManagement": "Gestione dei temi Lepton",
+    "DisplayName:BoxedLayout": "Layout con contorno",
+    "DisplayName:MenuPlacement": "Posizionamento del menu",
+    "DisplayName:MenuStatus": "Stato del menu",
+    "SuccessfullySaved": "Salvato con successo",
+    "Left": "Sinistra",
+    "Top": "Superiore",
+    "AlwaysOpened": "Sempre aperto",
+    "OpenOnHover": "Apri al passaggio del mouse",
+    "DisplayName:Style": "Stile",
+    "DisplayName:PublicLayoutStyle": "Stile del sito web pubblico",
+    "Authentication:YouAreLoggedOut": "Sei disconnesso.",
+    "Feature:LeptonThemeManagementGroup": "Gestione dei temi Lepton",
+    "Feature:LeptonThemeManagementEnable": "Abilita la gestione dei temi leptoni",
+    "Feature:LeptonThemeManagementEnableDescription": "Abilita il sistema di gestione dei leptoni nell'applicazione."
+  }
+}

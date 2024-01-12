@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "Volo.Abp.LeptonTheme": {
+      "path": "Volo.Abp.LeptonTheme.abpmdl.json"
+    }
+  }
+}

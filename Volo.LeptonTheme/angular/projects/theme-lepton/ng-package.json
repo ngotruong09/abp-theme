@@ -1,0 +1,16 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/packages/theme-lepton",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  },
+  "allowedNonPeerDependencies": [
+    "@abp/ng.theme.shared",
+    "flag-icon-css",
+    "@abp/ng.setting-management",
+    "@volo/abp.ng.account.core"
+  ],
+  "assets": [
+    "./dist/**/*"
+  ]
+}

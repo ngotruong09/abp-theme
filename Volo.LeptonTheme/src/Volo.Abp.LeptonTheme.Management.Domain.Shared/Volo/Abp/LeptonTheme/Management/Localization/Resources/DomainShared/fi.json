@@ -1,0 +1,22 @@
+{
+  "culture": "fi",
+  "texts": {
+    "Menu:LeptonThemeSettings": "Lepton-teema",
+    "Permission:LeptonThemeSettings": "Lepton-teeman asetukset",
+    "Permission:LeptonThemeManagement": "Lepton-teeman hallinta",
+    "DisplayName:BoxedLayout": "Laatikkorakenne",
+    "DisplayName:MenuPlacement": "Valikon sijoittelu",
+    "DisplayName:MenuStatus": "Valikon tila",
+    "SuccessfullySaved": "Tallentaminen onnistui",
+    "Left": "Vasen",
+    "Top": "Yläosa",
+    "AlwaysOpened": "Aina auki",
+    "OpenOnHover": "Avaa hiirellä",
+    "DisplayName:Style": "Tyyli",
+    "DisplayName:PublicLayoutStyle": "Julkisen verkkosivuston tyyli",
+    "Authentication:YouAreLoggedOut": "Olet kirjautunut ulos.",
+    "Feature:LeptonThemeManagementGroup": "Lepton-teeman hallinta",
+    "Feature:LeptonThemeManagementEnable": "Ota käyttöön lepton-teeman hallinta",
+    "Feature:LeptonThemeManagementEnableDescription": "Ota leptonin hallintajärjestelmä käyttöön sovelluksessa."
+  }
+}
