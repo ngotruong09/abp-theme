@@ -32,7 +32,6 @@
 	<PackageReference Include="Volo.Abp.SettingManagement.HttpApi.Client" Version="5.3.3" />
     <PackageReference Include="Volo.Saas.Host.Web" Version="5.3.3" />
     <PackageReference Include="Volo.Saas.Host.HttpApi.Client" Version="5.3.3" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton" Version="5.3.3" />
     <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi.Client" Version="5.3.3" />
   </ItemGroup>
 
@@ -40,6 +39,7 @@
     <ProjectReference Include="..\..\src\Hwl.NewTheme.Web\Hwl.NewTheme.Web.csproj" />
     <ProjectReference Include="..\..\src\Hwl.NewTheme.HttpApi.Client\Hwl.NewTheme.HttpApi.Client.csproj" />
     <ProjectReference Include="..\..\src\Hwl.NewTheme.HttpApi\Hwl.NewTheme.HttpApi.csproj" />
+    <ProjectReference Include="..\..\Volo.LeptonTheme\src\Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton\Volo.Abp.AspNetCore.Mvc.UI.Theme.Lepton.csproj" />
     <ProjectReference Include="..\Hwl.NewTheme.Host.Shared\Hwl.NewTheme.Host.Shared.csproj" />
   </ItemGroup>
 
