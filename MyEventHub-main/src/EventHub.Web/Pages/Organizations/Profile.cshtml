@@ -1,0 +1,180 @@
+﻿@page "/organizations/{name}"
+@inject IHtmlLocalizer<EventHubResource> L
+@using EventHub.Localization
+@using EventHub.Options
+@using EventHub.Organizations
+@using EventHub.Web
+@using EventHub.Web.Pages.Events.Components.EventsArea
+@using EventHub.Web.Pages.Organizations.Components.JoinArea
+@using EventHub.Web.Pages.Organizations.Components.MembersArea
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+@using Volo.Abp.AspNetCore.Mvc.UI.Packages.SweetAlert2
+@using Volo.Abp.Timing
+@model EventHub.Web.Pages.Organizations.ProfilePageModel
+@inject IClock Clock
+@inject IOptions<EventHubUrlOptions> UrlOptions
+
+@section scripts {
+    <abp-script type="@typeof(Sweetalert2ScriptContributor)"/>
+    <abp-script src="/Pages/Organizations/Profile.js"/>
+}
+
+<div class="bg-white py-5">
+    <div class="container detail-page pb-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="detail-image">
+                    <img class="detail-img" src="@(UrlOptions.Value.Api.EnsureEndsWith('/') + $"api/eventhub/organization/profile-picture/{Model.Organization.Id}")" alt="@Model.Organization.Name">
+                </div>
+            </div>
+
+
+            <div class="col-12 mt-4">
+                <ul class="nav nav-tabs profile-nav" id="myTab">
+                    <li class="nav-item">
+                        <a href="#about-organization-section" class="nav-link active" data-bs-toggle="tab">About the Organization</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#events-section" class="nav-link" data-bs-toggle="tab">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#members-section" class="nav-link" data-bs-toggle="tab">Members</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content py-4">
+                    <div id="about-organization-section" class="tab-pane fade show active">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <h5 class="detail-head mt-3 font-weight-bold">
+                                    @Model.Organization.DisplayName
+                                    @if (Model.Organization.PlanType != OrganizationPlanType.Free)
+                                    {
+                                        <span class="align-top text-dark font-weight-bold" style="font-size: x-small" abp-badge-pill="Warning"> @Model.Organization.PlanType </span>
+                                    }
+                                </h5>
+                                <p>
+                                    @Model.Organization.Description
+                                </p>
+                            </div>
+                            <div class="col-md-5">
+                                <h5 class="detail-head mt-3 font-weight-bold">Owners</h5>
+                                <div>
+                                    <a href="/users/@Model.Organization.OwnerUserName">
+                                        <img gravatar-email="@Model.Organization.OwnerEmail" default-image="Wavatar" gravatar-size="40" class="org-avatar avatar rounded-circle" data-bs-toggle="tooltip" title="@Model.Organization.OwnerUserName"/>
+                                    </a>
+                                </div>
+
+                                @if (Model.IsOrganizationOwner)
+                                {
+                                    <partial name="Components/_upgradeOrExtendOrganizationSection.cshtml" model="@Model.Organization"/>
+                                }
+                                @await Component.InvokeAsync(typeof(JoinAreaViewComponent), new {organizationId = Model.Organization.Id})
+                                @await Component.InvokeAsync(typeof(MembersAreaViewComponent),
+                                    new
+                                    {
+                                        organizationId = Model.Organization.Id,
+                                        isPagination = true,
+                                        maxResultCount = 15
+                                    })
+
+                                @if (Model.IsShowSocialMediaContent)
+                                {
+                                    <h5 class="detail-head mt-5 font-weight-bold">Links</h5>
+                                    <div class="share-container">
+                                        @if (!Model.Organization.Website.IsNullOrWhiteSpace())
+                                        {
+                                            <span>
+                                                WEBSITE:
+                                                <a href="@Model.Organization.Website">
+                                                    @Model.Organization.Website
+                                                </a>
+                                            </span>
+                                        }
+                                        <br>
+                                        @if (!Model.Organization.TwitterUsername.IsNullOrWhiteSpace())
+                                        {
+                                            <a href="https://twitter.com/@Model.Organization.TwitterUsername">
+                                                <img width="40" height="40" src="/assets/twitter2.svg">
+                                            </a>
+                                        }
+                                        @if (!Model.Organization.GitHubUsername.IsNullOrWhiteSpace())
+                                        {
+                                            <a href="https://www.github.com/@Model.Organization.GitHubUsername">
+                                                <img width="40" height="40" src="/assets/github.svg">
+                                            </a>
+                                        }
+                                        @if (!Model.Organization.FacebookUsername.IsNullOrWhiteSpace())
+                                        {
+                                            <a href="https://www.facebook.com/@Model.Organization.FacebookUsername">
+                                                <img width="40" height="40" src="/assets/facebook2.png">
+                                            </a>
+                                        }
+                                        @if (!Model.Organization.InstagramUsername.IsNullOrWhiteSpace())
+                                        {
+                                            <a href="https://www.instagram.com/@Model.Organization.InstagramUsername">
+                                                <img width="40" height="40" src="/assets/instagram.svg">
+                                            </a>
+                                        }
+                                        @if (!Model.Organization.MediumUsername.IsNullOrWhiteSpace())
+                                        {
+                                            <a href="https://www.medium.com/@@@Model.Organization.MediumUsername">
+                                                <img width="40" height="40" src="/assets/medium.svg">
+                                            </a>
+                                        }
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div id="events-section" class="tab-pane fade">
+                        <div class="row mb-4">
+                            <div class="col-md">
+                            </div>
+                            <div class="col-md-auto">
+                                <div class="list-style">
+                                    <ul class="nav nav-pills events" role="tablist">
+                                        <li class="nav-item">
+                                            <a href="#PastEvent" class="selected" data-bs-toggle="tab"><img src="/assets/past.svg"> Past</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#UpcomingEvent" data-bs-toggle="tab"><img src="/assets/now.svg"> Upcoming</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div id="PastEvent" class="tab-pane active">
+                                @await Component.InvokeAsync(typeof(EventsAreaViewComponent), new
+                                {
+                                    organizationId = Model.Organization.Id,
+                                    maxDate = Clock.Now.ClearTime()
+                                })
+                            </div>
+                            <div id="UpcomingEvent" class="tab-pane">
+                                @await Component.InvokeAsync(typeof(EventsAreaViewComponent), new
+                                {
+                                    organizationId = Model.Organization.Id,
+                                    minDate = Clock.Now.ClearTime()
+                                })
+                            </div>
+                        </div>
+                    </div>
+                    <div id="members-section" class="tab-pane fade">
+                        @await Component.InvokeAsync(typeof(MembersAreaViewComponent),
+                            new
+                            {
+                                organizationId = Model.Organization.Id,
+                                isPagination = true,
+                                maxResultCount = 18,
+                                isMoreDetail = true
+                            })
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

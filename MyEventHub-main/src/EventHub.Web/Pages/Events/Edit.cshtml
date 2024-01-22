@@ -1,0 +1,19 @@
+@page "/event/edit/{url}"
+@using EventHub.Web.Pages.Events.Components.CreateOrEditEventArea
+@model EventHub.Web.Pages.Events.EditPageModel
+
+@section scripts {
+    <abp-script src="/libs/awesomplete/awesomplete.min.js" />
+}
+
+@section styles {
+    <abp-style src="/libs/awesomplete/awesomplete.css" />
+}
+
+<div class="container mt-5">
+    @await Component.InvokeAsync(typeof(CreateOrEditEventAreaViewComponent), new
+    {
+        eventUrlCode = Model.UrlCode,
+        stepType = CreateOrEditEventAreaViewComponent.ProgressStepType.Event
+    })
+</div>

@@ -1,0 +1,24 @@
+@model List<EventHub.Organizations.Memberships.OrganizationMemberDto>
+
+@foreach (var member in Model)
+{
+    <div>
+        <div>
+            <p>
+                <a href="/users/@member.UserName">
+                    <img gravatar-email="@member.Email" default-image="Wavatar" gravatar-size="40" class="org-avatar avatar rounded-circle" data-bs-toggle="tooltip" title="@member.UserName"/>
+                </a>@member.UserName</p>
+            
+            <span class="member-name" style="display: none">
+                @if (!string.IsNullOrWhiteSpace(member.Name) && !string.IsNullOrWhiteSpace(member.Surname))
+                {
+                    @(member.Name + " " + member.Surname)
+                }
+                else
+                {
+                    {@member.UserName}
+                }
+            </span>
+        </div>
+    </div>
+}

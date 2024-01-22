@@ -1,0 +1,34 @@
+@using EventHub.Options
+@using EventHub.Organizations
+@using EventHub.Web
+@using Microsoft.Extensions.Options
+@model List<EventHub.Organizations.OrganizationInListDto>
+@inject IOptions<EventHubUrlOptions> UrlOptions
+
+@foreach (var organization in Model)
+{
+    <div class="col-lg-4 col-md-6 organization">
+        <div class="card">
+            <div class="event-thumbnail" style="background-image: url(@(UrlOptions.Value.Api.EnsureEndsWith('/') + $"api/eventhub/organization/profile-picture/{organization.Id}"));" alt="@organization.Name">
+            </div>
+            <div class="card-body">
+                <div class="event-container">
+                    <div class="event-info">
+                        <h5>
+                            @organization.DisplayName
+                            @if (organization.PlanType != OrganizationPlanType.Free)
+                            {
+                                <span class="align-top text-dark font-weight-bold" style="font-size: x-small" abp-badge-pill="Warning"> @organization.PlanType </span>
+                            }
+                        </h5>
+                       
+                        <p>
+                            @organization.Description
+                        </p>
+                    </div>
+                    <a href="@Url.Page("/Organizations/Profile", new {name = organization.Name})" class="btn btn-link p-0">Details <img src="/assets/more-btn.svg"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

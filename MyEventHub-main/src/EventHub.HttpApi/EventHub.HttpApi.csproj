@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>EventHub</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EventHub.Application.Contracts\EventHub.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\modules\payment\src\Payment.HttpApi\Payment.HttpApi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="6.0.0" />
+    <PackageReference Include="Volo.CmsKit.Public.HttpApi" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>

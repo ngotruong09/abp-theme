@@ -1,0 +1,42 @@
+@inject IHtmlLocalizer<EventHubResource> L
+@using EventHub.Localization
+@using EventHub.Web.Pages.Events
+@using Microsoft.AspNetCore.Mvc.Localization
+@model EventHub.Web.Pages.Events.Components.LocationArea.LocationAreaViewComponent.LocationAreaViewComponentModel
+<div data-event-id="@Model.EventId">
+    @if (Model.IsRegistered)
+    {
+        if (Model.IsOnline)
+        {
+            if (Model.OnlineLink != null)
+            {
+                <a class="detail-pin" href="@Model.OnlineLink"><img src="/assets/pin.svg"> @L["GoToOnlineAddress"]</a>
+            }
+            else
+            {
+                <span>@L["LocationHasNotSpecifiedYet", "URL"]</span>
+            }
+        }else
+        {
+            if (Model.Country != null && Model.City != null)
+            {
+                <span class="detail-pin"><img src="/assets/pin.svg"> @EventDateHelper.GetLocationInfo(Model.IsOnline, Model.City, Model.Country, ", ")</span>
+            }
+            else
+            {
+                <span class="detail-pin">@L["LocationHasNotSpecifiedYet", "location"]</span>
+            }
+        }
+    }
+    else
+    {
+        if (Model.IsOnline)
+        {
+            <span class="detail-pin">@L["AttendeesCanSeeEventLocation", "URL"]</span>
+        }
+        else
+        {
+            <span class="detail-pin">@L["AttendeesCanSeeEventLocation", "location"]</span>
+        }
+    }
+</div>
