@@ -1,23 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.DependencyInjection;
 using Hwl.NewTheme.Localization;
 using Hwl.NewTheme.Web.Menus;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AspNetCore.Mvc.Localization;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
-using Hwl.NewTheme.Permissions;
 
 namespace Hwl.NewTheme.Web;
 
-[DependsOn(
-    typeof(NewThemeApplicationContractsModule),
-    typeof(AbpAspNetCoreMvcUiThemeSharedModule),
-    typeof(AbpAutoMapperModule)
+   [DependsOn(
+        typeof(NewThemeApplicationContractsModule),
+        typeof(AbpAspNetCoreMvcUiThemeSharedModule),
+        typeof(AbpAutoMapperModule)
     )]
-public class NewThemeWebModule : AbpModule
+    public class NewThemeWebModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {

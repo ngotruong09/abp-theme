@@ -36,6 +36,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\packages\Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic\Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.csproj" />
     <ProjectReference Include="..\..\src\Hwl.NewTheme.Web\Hwl.NewTheme.Web.csproj" />
     <ProjectReference Include="..\..\src\Hwl.NewTheme.HttpApi.Client\Hwl.NewTheme.HttpApi.Client.csproj" />
     <ProjectReference Include="..\..\src\Hwl.NewTheme.HttpApi\Hwl.NewTheme.HttpApi.csproj" />

@@ -42,6 +42,7 @@ using Volo.Abp.SettingManagement.Web;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.Account;
+using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic;
 
 namespace Hwl.NewTheme;
 
@@ -52,7 +53,8 @@ namespace Hwl.NewTheme;
     typeof(AbpAspNetCoreAuthenticationOpenIdConnectModule),
     typeof(AbpAspNetCoreMvcClientModule),
     typeof(AbpHttpClientWebModule),
-    typeof(AbpAspNetCoreMvcUiLeptonThemeModule),
+    //typeof(AbpAspNetCoreMvcUiLeptonThemeModule),
+    typeof(AbpAspNetCoreMvcUiBasicThemeModule),
     typeof(AbpAutofacModule),
     typeof(AbpCachingStackExchangeRedisModule),
     typeof(AbpHttpClientIdentityModelWebModule),
